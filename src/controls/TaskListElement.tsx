@@ -1,5 +1,6 @@
 import { useAction } from "@reatom/npm-react";
 import { removeTask, toggleTask } from "../model/actions";
+import { Button, Checkbox } from 'antd'
 
 
 export const TaskListElement = (props : any) => {
@@ -9,10 +10,13 @@ export const TaskListElement = (props : any) => {
     let model = props.model;
 
     return (
-        <div className="App-task">
-            <input onChange={() => { toggle(!model.isDone, model) }} className="Task-checkBox" type="CheckBox" checked={model.isDone} />
+        <div className={`App-task ${ model.isDone ? "Task-check" : "" }`}>
+            <Checkbox 
+                className="Task-checkBox"
+                onChange={() => { toggle(!model.isDone, model) }}   
+                checked={model.isDone} />
             <span className="Task-text" >{model.text}</span>
-            <button onClick={() => { del(model) }} className="Task-delButton">Del</button>
+            <Button className="Task-delButton" type="ghost" onClick={() => { del(model) }} >Del</Button>
         </div>
     )
 }

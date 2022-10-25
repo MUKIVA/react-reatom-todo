@@ -3,19 +3,22 @@ import './App.css';
 import { InputTask } from './controls/InputTask';
 import './model/store';
 import { TaskList } from './controls/TaskList';
+import { Layout } from 'antd'
+
+const { Header, Content } = Layout
 
 function App()
 {
     return (
-        <div className="App">
-            <header className="App-header">
+        <Layout className="App">
+            <Header className="App-header">
                 ToDo List
-            </header>
-            <div className='App-body'>
+            </Header>
+            <Content className='App-body'>
                 <InputTask />
                 <TaskList />
-            </div>
-        </div>
+            </Content>
+        </Layout>
     );
 }
 
