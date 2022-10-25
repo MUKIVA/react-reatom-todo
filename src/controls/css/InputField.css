@@ -1,0 +1,15 @@
+@media screen and (min-width: 600px) {
+    .my-form .grid {
+      display: grid;
+      grid-gap: 1.5rem;
+    }
+     
+    .my-form .grid-2 {
+      grid-template-columns: 1fr 1fr;   
+    }
+   
+    .my-form .grid-3 {
+      grid-template-columns: auto auto auto;
+      align-items: center;
+    }
+  }
